@@ -23,7 +23,7 @@ class User
 class UserService
 {
   boolean loginSuccess = false;
-  
+
    public void signup(String name,long mob,String email,String pwd)
    {
      //Generate random integer for UID
@@ -60,11 +60,20 @@ class UserService
 
    public void viewProfile()
    {
+     if(loginSuccess == true)
+     {
        System.out.println("Name   : "+userDto.name);
        System.out.println("Mobile : "+userDto.mob);
        System.out.println("Email  : "+userDto.email);
-       System.out.println("UID    : "+userDto.uid); 
+       System.out.println("UID   : "+userDto.uid);
+       loginSuccess = false;
+     }
+     else
+     {
+       System.out.println("PLEASE LOGIN FIRST!!");
+     }
    }
+}
 }
 
 //Front-End

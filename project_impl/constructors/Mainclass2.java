@@ -38,7 +38,9 @@ class User
 //Service - Biz Logics
 class UserService
 {
+  User userDto;
   boolean loginSuccess = false;
+  Random r1 = new Random();
 
    public void signup(String name,long mob,String email,String pwd)
    {
@@ -47,6 +49,30 @@ class UserService
      
      //create DTO
      userDto = new User(uid,name,mob,email,pwd);
+     
+     //To-Do : save DTO data to DB
+     System.out.println();
+   }
+
+   public void signup(String name,String email,String pwd)
+   {
+     //Generate random integer for UID
+     int uid = r1.nextInt(10000);//inBuilt-method
+     
+     //create DTO
+     userDto = new User(uid,name,email,pwd);
+     
+     //To-Do : save DTO data to DB
+     System.out.println();
+   }
+
+   public void signup(String name,long mob,String pwd)
+   {
+     //Generate random integer for UID
+     int uid = r1.nextInt(10000);//inBuilt-method
+     
+     //create DTO
+     userDto = new User(uid,name,mob,pwd);
      
      //To-Do : save DTO data to DB
      System.out.println();
@@ -90,10 +116,9 @@ class UserService
      }
    }
 }
-}
 
 //Front-End
-class Mainclass
+class Mainclass2
 {
 	public static void main(String[] args)
 	{

@@ -22,6 +22,8 @@ class User
 //Service - Biz Logics
 class UserService
 {
+  boolean loginSuccess = false;
+  
    public void signup(String name,long mob,String email,String pwd)
    {
      //Generate random integer for UID
@@ -32,6 +34,28 @@ class UserService
      
      //To-Do : save DTO data to DB
      System.out.println();
+   }
+
+   public void login(String entEmail,String entPwd)
+   {
+      //check signup was sucessfull
+      if(userDto != null)
+      {
+         //Get Email and Pwd from DB
+         if((entEmail.equals(userDto.email) && entPwd.equals(userDto.pwd)))
+         {
+            loginSuccess = true;
+         }
+         else
+         {
+            loginSuccess = false;
+            System.out.println("ERROR : INVALID USERNAME OR PASSWORD!!");
+         }
+      }
+      else
+      {
+         System.out.println("PLEASE COMPLETE SIGNUP");
+      }
    }
 
    public void viewProfile()

@@ -17,12 +17,29 @@ class User
     this.email = email;
     this.pwd   = pwd;
   }
+
+  public User(int uid,String name,String email,String pwd)
+  {
+    this.uid   = uid;
+    this.name  = name;
+    this.email = email;
+    this.pwd   = pwd;
+  }
+
+  public User(int uid,String name,long mob,String pwd)
+  {
+    this.uid   = uid;
+    this.name  = name;
+    this.mob   = mob;
+    this.pwd   = pwd;
+  }
 }
 
 //Service - Biz Logics
 class UserService
 {
    User userDto = null;
+   Random r1 = new Random();
 
    boolean loginSuccess = false;
 
@@ -51,7 +68,6 @@ class UserService
    public void signup(String name,long mob,String email,String pwd)
    {
      //Generate random integer for UID
-     Random r1 = new Random();
      int uid = r1.nextInt(10000);//inBuilt-method
      
      //create DTO
@@ -60,6 +76,32 @@ class UserService
      //To-Do : save DTO data to DB
    	 System.out.println();
    }
+
+   public void signup(String name,String email,String pwd)
+   {
+     //Generate random integer for UID
+     int uid = r1.nextInt(10000);//inBuilt-method
+     
+     //create DTO
+     userDto = new User(uid,name,email,pwd);
+     
+     //To-Do : save DTO data to DB
+     System.out.println();
+   }
+
+   public void signup(String name,long mob,String pwd)
+   {
+     //Generate random integer for UID
+     int uid = r1.nextInt(10000);//inBuilt-method
+     
+     //create DTO
+     userDto = new User(uid,name,mob,pwd);
+     
+     //To-Do : save DTO data to DB
+     System.out.println();
+   }
+
+
 
    public void viewProfile()
    {
@@ -91,7 +133,7 @@ class Mainclass
        userServ.login("rakshith@gmail.com","charlie777");
        userServ.viewProfile();
       
-       userServ.signup("Pooja Hegde",8192910213l,"pooja@gmail.com","pooja1234");
+       userServ.signup("Pooja Hegde","pooja@gmail.com","pooja1234");
        userServ.login("pooja@gmail.com","pooja1234");
        userServ.viewProfile();
 
@@ -99,7 +141,3 @@ class Mainclass
 	   System.out.println("Program ends..");	
 	}
 }
-
-
-
-

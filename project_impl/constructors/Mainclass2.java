@@ -17,6 +17,22 @@ class User
     this.email = email;
     this.pwd   = pwd;
   }
+
+  public User(int uid,String name,String email,String pwd)
+  {
+    this.uid   = uid;
+    this.name  = name;
+    this.email = email;
+    this.pwd   = pwd;
+  }
+
+  public User(int uid,String name,long mob,String pwd)
+  {
+    this.uid   = uid;
+    this.name  = name;
+    this.mob   = mob;
+    this.pwd   = pwd;
+  }
 }
 
 //Service - Biz Logics

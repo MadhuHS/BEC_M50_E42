@@ -36,7 +36,10 @@ class UserService
 
    public void viewProfile()
    {
-     
+       System.out.println("Name   : "+userDto.name);
+       System.out.println("Mobile : "+userDto.mob);
+       System.out.println("Email  : "+userDto.email);
+       System.out.println("UID    : "+userDto.uid); 
    }
 }
 

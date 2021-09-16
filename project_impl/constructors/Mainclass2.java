@@ -123,7 +123,15 @@ class Mainclass2
 	public static void main(String[] args)
 	{
 	   System.out.println("Program starts..");
+        UserService userServ = new UserService();
        
+       userServ.signup("Rakshith",9808651512l,"rakshith@gmail.com","charlie777");
+       userServ.login("rakshith@gmail.com","charlie777");
+       userServ.viewProfile();
+      
+       userServ.signup("Pooja Hegde","pooja@gmail.com","pooja1234");
+       userServ.login("pooja@gmail.com","pooja1234");
+       userServ.viewProfile(); 
     
 	   System.out.println("Program ends..");	
 	}

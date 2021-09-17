@@ -5,24 +5,30 @@ class Graph
     System.out.println("draw point at 0,0");
   } 
 
-  public void drawPoint(int x,int y)
+  protected void drawPoint(int x,int y)
   {
     System.out.println("draw point at "+x+","+y);
   } 
 
-  public void drawPoint(double x,double y)
+  public static void drawPoint(double x,double y)
   {
     System.out.println("draw point at "+x+","+y);
   } 
 
-  public void drawPoint(int x,double y)
+  public int drawPoint(int x,double y)
   {
     System.out.println("draw point at "+x+","+y);
+    return 10;
   }
 
   public void drawPoint(double x,int y)
   {
     System.out.println("draw point at "+x+","+y);
+  }
+
+  public void drawPoint(double x,int y,double z)
+  {
+    System.out.println("draw point at "+x+","+y+","+z);
   }  
 }
 
@@ -39,6 +45,11 @@ class Mainclass
        g1.drawPoint(2.5,3.1);
        g1.drawPoint(8,1.3);
        g1.drawPoint(3.1,2);
+       g1.drawPoint(3.1,2,9.1);
+
+       System.out.println();
+       System.out.println(10);
+      
 
 	   System.out.println("Program ends...");
 	}

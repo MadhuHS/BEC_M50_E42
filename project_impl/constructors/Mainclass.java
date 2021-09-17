@@ -64,7 +64,13 @@ class UserService
          System.out.println("PLEASE COMPLETE SIGNUP");
       }
    }
-
+   
+   /*
+    params : name,mob,email,pwd
+    desc   : this method creates an account for the user
+             with all valid params
+    author : madhu
+   */
    public void signup(String name,long mob,String email,String pwd)
    {
      //Generate random integer for UID

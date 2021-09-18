@@ -38,9 +38,8 @@ class User
 //Service - Biz Logics
 class UserService
 {
-   User userDto = null;
-   Random r1 = new Random();
-
+   User    userDto = null;
+   Random  r1 = new Random();
    boolean loginSuccess = false;
 
    public void login(String entEmail,String entPwd)

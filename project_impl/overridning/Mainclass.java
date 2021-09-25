@@ -42,17 +42,11 @@ class Customer
 }
 
 
-class UserService
+abstract class UserService
 {
-   public void login(String entEmail,String entPwd)
-   {
-   	 System.out.println("this is login() of UserService");
-   }
+   abstract public void login(String entEmail,String entPwd);
 
-   public void signup()
-   {
-   	 System.out.println("this is signup() of UserService");
-   }
+   abstract public void signup();
 
    public void logout()
    {
@@ -100,6 +94,7 @@ class CustomerService extends UserService
    Customer customerDto;
    boolean loginSuccess;
 
+   @Override
    public void login(String entEmail,String entPwd)
    {
       //check signup was sucessfull

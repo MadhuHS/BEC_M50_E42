@@ -51,8 +51,6 @@ class Mainclass3
       d2.view();//Subclass-method
       System.out.println(d2.z1);//Subclass-DM
 
-
-     
 		System.out.println("Program ends...");
 	}
 }
